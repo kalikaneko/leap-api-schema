@@ -1,0 +1,529 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "Schema for eip-service.json",
+    "description": "Describes a valid eip-service.json for API v3.",
+    "required": [
+        "gateways",
+        "locations",
+        "openvpn_configuration",
+        "serial",
+        "version"
+    ],
+    "properties": {
+        "gateways": {
+            "$id": "#/properties/gateways",
+            "type": "array",
+            "title": "The gateways schema",
+            "description": "An array of available gateways for this provider.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "capabilities": {
+                            "adblock": false,
+                            "filter_dns": false,
+                            "limited": false,
+                            "transport": [
+                                {
+                                    "type": "openvpn",
+                                    "protocols": [
+                                        "tcp"
+                                    ],
+                                    "ports": [
+                                        "1194"
+                                    ]
+                                }
+                            ],
+                            "user_ips": false
+                        },
+                        "host": "crane.riseup.net",
+                        "ip_address": "37.218.244.249",
+                        "location": "miami"
+                    },
+                    {
+                        "capabilities": {
+                            "adblock": false,
+                            "filter_dns": false,
+                            "limited": false,
+                            "transport": [
+                                {
+                                    "type": "openvpn",
+                                    "protocols": [
+                                        "tcp"
+                                    ],
+                                    "ports": [
+                                        "443"
+                                    ]
+                                }
+                            ],
+                            "user_ips": false
+                        },
+                        "host": "fournier.riseup.net",
+                        "ip_address": "212.129.4.124",
+                        "location": "paris"
+                    }
+                ]
+            ],
+            "items": {
+                "$id": "#/properties/gateways/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/gateways/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "capabilities": {
+                                    "adblock": false,
+                                    "filter_dns": false,
+                                    "limited": false,
+                                    "transport": [
+                                        {
+                                            "type": "openvpn",
+                                            "protocols": [
+                                                "tcp"
+                                            ],
+                                            "ports": [
+                                                "1194"
+                                            ]
+                                        }
+                                    ],
+                                    "user_ips": false
+                                },
+                                "host": "crane.riseup.net",
+                                "ip_address": "37.218.244.249",
+                                "location": "miami"
+                            }
+                        ],
+                        "required": [
+                            "capabilities",
+                            "host",
+                            "ip_address",
+                            "location"
+                        ],
+                        "properties": {
+                            "capabilities": {
+                                "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities",
+                                "type": "object",
+                                "title": "The capabilities schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "adblock": false,
+                                        "filter_dns": false,
+                                        "limited": false,
+                                        "transport": [
+                                            {
+                                                "type": "openvpn",
+                                                "protocols": [
+                                                    "tcp"
+                                                ],
+                                                "ports": [
+                                                    "1194"
+                                                ]
+                                            }
+                                        ],
+                                        "user_ips": false
+                                    }
+                                ],
+                                "required": [
+                                    "transport"
+                                ],
+                                "properties": {
+                                    "adblock": {
+                                        "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities/properties/adblock",
+                                        "type": "boolean",
+                                        "title": "The adblock schema",
+                                        "description": "Unused.",
+                                        "default": false,
+                                        "examples": [
+                                            false
+                                        ]
+                                    },
+                                    "filter_dns": {
+                                        "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities/properties/filter_dns",
+                                        "type": "boolean",
+                                        "title": "The filter_dns schema",
+                                        "description": "Unused.",
+                                        "default": false,
+                                        "examples": [
+                                            false
+                                        ]
+                                    },
+                                    "limited": {
+                                        "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities/properties/limited",
+                                        "type": "boolean",
+                                        "title": "The limited schema",
+                                        "description": "Unused.",
+                                        "default": false,
+                                        "examples": [
+                                            false
+                                        ]
+                                    },
+                                    "transport": {
+                                        "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities/properties/transport",
+                                        "type": "array",
+                                        "title": "The transport schema",
+                                        "description": "An array of valid transports.",
+                                        "default": [],
+                                        "examples": [
+                                            [
+                                                {
+                                                    "type": "openvpn",
+                                                    "protocols": [
+                                                        "tcp"
+                                                    ],
+                                                    "ports": [
+                                                        "1194"
+                                                    ]
+                                                }
+                                            ]
+                                        ],
+                                        "items": {
+                                            "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities/properties/transport/items",
+                                            "anyOf": [
+                                                {
+                                                    "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities/properties/transport/items/anyOf/0",
+                                                    "type": "object",
+                                                    "title": "The first anyOf schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": {},
+                                                    "examples": [
+                                                        {
+                                                            "type": "openvpn",
+                                                            "protocols": [
+                                                                "tcp"
+                                                            ],
+                                                            "ports": [
+                                                                "1194"
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "required": [
+                                                        "type",
+                                                        "protocols",
+                                                        "ports"
+                                                    ],
+                                                    "properties": {
+                                                        "type": {
+                                                            "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities/properties/transport/items/anyOf/0/properties/type",
+                                                            "type": "string",
+                                                            "title": "The type schema",
+                                                            "description": "Protocol type. Valid values: openvpn, obfs4.",
+                                                            "default": "",
+                                                            "examples": [
+                                                                "openvpn"
+                                                            ]
+                                                        },
+                                                        "protocols": {
+                                                            "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities/properties/transport/items/anyOf/0/properties/protocols",
+                                                            "type": "array",
+                                                            "title": "The protocols schema",
+                                                            "description": "Accepted protocols. Valid values: tcp, udp.",
+                                                            "default": [],
+                                                            "examples": [
+                                                                [
+                                                                    "tcp"
+                                                                ]
+                                                            ],
+                                                            "items": {
+                                                                "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities/properties/transport/items/anyOf/0/properties/protocols/items",
+                                                                "anyOf": [
+                                                                    {
+                                                                        "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities/properties/transport/items/anyOf/0/properties/protocols/items/anyOf/0",
+                                                                        "type": "string",
+                                                                        "title": "The first anyOf schema",
+                                                                        "description": "An explanation about the purpose of this instance.",
+                                                                        "default": "",
+                                                                        "examples": [
+                                                                            "tcp"
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        "ports": {
+                                                            "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities/properties/transport/items/anyOf/0/properties/ports",
+                                                            "type": "array",
+                                                            "title": "The ports schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": [],
+                                                            "examples": [
+                                                                [
+                                                                    "1194"
+                                                                ]
+                                                            ],
+                                                            "items": {
+                                                                "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities/properties/transport/items/anyOf/0/properties/ports/items",
+                                                                "anyOf": [
+                                                                    {
+                                                                        "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities/properties/transport/items/anyOf/0/properties/ports/items/anyOf/0",
+                                                                        "type": "string",
+                                                                        "title": "The first anyOf schema",
+                                                                        "description": "An explanation about the purpose of this instance.",
+                                                                        "default": "",
+                                                                        "examples": [
+                                                                            "1194"
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "user_ips": {
+                                        "$id": "#/properties/gateways/items/anyOf/0/properties/capabilities/properties/user_ips",
+                                        "type": "boolean",
+                                        "title": "The user_ips schema",
+                                        "description": "unused",
+                                        "default": false,
+                                        "examples": [
+                                            false
+                                        ]
+                                    }
+                                }
+                            },
+                            "host": {
+                                "$id": "#/properties/gateways/items/anyOf/0/properties/host",
+                                "type": "string",
+                                "title": "The host schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "crane.riseup.net"
+                                ]
+                            },
+                            "ip_address": {
+                                "$id": "#/properties/gateways/items/anyOf/0/properties/ip_address",
+                                "type": "string",
+                                "title": "The ip_address schema",
+                                "description": "IP string.",
+                                "default": "",
+                                "examples": [
+                                    "37.218.244.249"
+                                ]
+                            },
+                            "location": {
+                                "$id": "#/properties/gateways/items/anyOf/0/properties/location",
+                                "type": "string",
+                                "title": "The location schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "miami"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "locations": {
+            "$id": "#/properties/locations",
+            "type": "object",
+            "title": "The locations schema",
+            "description": "An array of gateway locations.",
+            "default": {},
+            "examples": [
+                {
+                    "amsterdam": {
+                        "country_code": "NL",
+                        "hemisphere": "N",
+                        "name": "Amsterdam",
+                        "timezone": "+2"
+                    },
+                    "miami": {
+                        "country_code": "US",
+                        "hemisphere": "S",
+                        "name": "Miami",
+                        "timezone": "-5"
+                    },
+                    "montreal": {
+                        "country_code": "CA",
+                        "hemisphere": "N",
+                        "name": "Montreal",
+                        "timezone": "-5"
+                    },
+                    "newyork": {
+                        "country_code": "US",
+                        "hemisphere": "N",
+                        "name": "NewYork",
+                        "timezone": "-7"
+                    },
+                    "paris": {
+                        "country_code": "FR",
+                        "hemisphere": "N",
+                        "name": "Paris",
+                        "timezone": "+2"
+                    },
+                    "seattle": {
+                        "country_code": "US",
+                        "hemisphere": "N",
+                        "name": "Seattle",
+                        "timezone": "-7"
+                    }
+                }
+            ],
+            "required": [
+            ],
+            "patternProperties": {
+                ".*": {
+                    "type": "object",
+                    "title": "The Location Schema",
+                    "description": "An object describing a gateway location.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "country_code": "NL",
+                            "hemisphere": "N",
+                            "name": "Amsterdam",
+                            "timezone": "+2"
+                        }
+                    ],
+                    "required": [
+                        "country_code",
+                        "hemisphere",
+                        "name",
+                        "timezone"
+                    ],
+                    "properties": {
+                        "country_code": {
+                            "$id": "#/properties/locations/location/properties/country_code",
+                            "type": "string",
+                            "description": "A two-letter country code.",
+                            "default": "",
+                            "examples": [
+                                "NL"
+                            ]
+                        },
+                        "hemisphere": {
+                            "$id": "#/properties/locations/location/properties/hemisphere",
+                            "type": "string",
+                            "description": "Single letter describing hemisphere (unused).",
+                            "default": "",
+                            "examples": [
+                                "N"
+                            ]
+                        },
+                        "name": {
+                            "$id": "#/properties/locations/location/properties/name",
+                            "type": "string",
+                            "description": "User-facing label for the location (city).",
+                            "default": "",
+                            "examples": [
+                                "Amsterdam"
+                            ]
+                        },
+                        "timezone": {
+                            "$id": "#/properties/locations/location/properties/timezone",
+                            "type": "string",
+                            "description": "Timezone for the location.",
+                            "default": "",
+                            "examples": [
+                                "+2"
+                            ]
+                        }
+                    }
+                }
+        },
+        "openvpn_configuration": {
+            "$id": "#/properties/openvpn_configuration",
+            "type": "object",
+            "title": "The openvpn_configuration schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "auth": "SHA1",
+                    "cipher": "AES-128-CBC",
+                    "keepalive": "10 30",
+                    "tls-cipher": "DHE-RSA-AES128-SHA",
+                    "tun-ipv6": true
+                }
+            ],
+            "required": [
+            ],
+            "properties": {
+                "auth": {
+                    "$id": "#/properties/openvpn_configuration/properties/auth",
+                    "type": "string",
+                    "title": "The auth schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "SHA1"
+                    ]
+                },
+                "cipher": {
+                    "$id": "#/properties/openvpn_configuration/properties/cipher",
+                    "type": "string",
+                    "title": "The cipher schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "AES-128-CBC"
+                    ]
+                },
+                "keepalive": {
+                    "$id": "#/properties/openvpn_configuration/properties/keepalive",
+                    "type": "string",
+                    "title": "The keepalive schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "10 30"
+                    ]
+                },
+                "tls-cipher": {
+                    "$id": "#/properties/openvpn_configuration/properties/tls-cipher",
+                    "type": "string",
+                    "title": "The tls-cipher schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "DHE-RSA-AES128-SHA"
+                    ]
+                },
+                "tun-ipv6": {
+                    "$id": "#/properties/openvpn_configuration/properties/tun-ipv6",
+                    "type": "boolean",
+                    "title": "The tun-ipv6 schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                        true
+                    ]
+                }
+            }
+        },
+        "serial": {
+            "$id": "#/properties/serial",
+            "type": "integer",
+            "title": "The serial schema",
+            "description": "Serial modifications to this file (unused).",
+            "default": 0,
+            "examples": [
+                3
+            ]
+        },
+        "version": {
+            "$id": "#/properties/version",
+            "type": "integer",
+            "title": "The version schema",
+            "description": "The API version number.",
+            "default": 0,
+            "examples": [
+                3
+            ]
+        }
+    }
+    }
+}
