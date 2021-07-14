@@ -4,7 +4,10 @@ Validate LEAP api json files.
 
 ## Build
 
+```bash
+git clone https://github.com/kalikaneko/leap-api-schema && cd leap-api-schema
 go build
+```
 
 ## Usage
 
