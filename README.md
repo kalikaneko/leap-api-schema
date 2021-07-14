@@ -20,5 +20,8 @@ Usage: leap-api-schema <EIPURL>
 
 ❯ ./leap-api-schema https://black.riseup.net/3/config/eip-service.json
 OK: https://black.riseup.net/3/config/eip-service.json
+
+❯ ./leap-api-schema  https://calyx.net/3/config/eip-service.json
+OK: https://calyx.net/3/config/eip-service.json
 ```
 
